@@ -1,0 +1,111 @@
+# =========================
+
+# Visual Studio
+
+# =========================
+
+.vs/
+*.user
+*.VC.db
+*.VC.opendb
+*.suo
+
+# =========================
+
+# Build folders
+
+# =========================
+
+Debug/
+Release/
+x64/
+x86/
+build/
+out/
+
+# =========================
+
+# CMake (por si usás en algún momento)
+
+# =========================
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# =========================
+
+# Logs
+
+# =========================
+
+*.log
+
+# =========================
+
+# Temporary files
+
+# =========================
+
+*.tmp
+*.temp
+*.cache
+
+# =========================
+
+# Object / compiled files
+
+# =========================
+
+*.obj
+*.o
+*.pch
+*.pdb
+*.ilk
+*.idb
+*.exe
+
+# =========================
+
+# IntelliSense
+
+# =========================
+
+*.ipch
+
+# =========================
+
+# Windows
+
+# =========================
+
+Thumbs.db
+Desktop.ini
+
+# =========================
+
+# Git
+
+# =========================
+
+.gitignore
+
+# =========================
+
+# Extras recomendados
+
+# =========================
+
+*.tlog
+*.lastbuildstate
+*.unsuccessfulbuild
+
+# =========================
+
+# Output de imágenes (opcional)
+
+# =========================
+
+output/
+renders/

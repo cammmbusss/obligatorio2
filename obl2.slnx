@@ -3,6 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="../raytracer/raytracer.vcxproj" />
-  <Project Path="obl2.vcxproj" />
+  <Project Path="obl2.vcxproj" Id="5bcbe6ab-a3a1-4e30-88ea-2a6a946335fe" />
 </Solution>

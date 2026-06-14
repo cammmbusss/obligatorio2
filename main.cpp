@@ -66,9 +66,47 @@ int main() {
     // escena
     Scene scene;
 
-    
-    scene.objects.push_back(new Plane(Vec3(0, -1, 0), Vec3(0, 1, 0), Color(0.5, 0.5, 0.5))); // piso
-    scene.objects.push_back(new Sphere(Vec3(0, 0, -5), 1, Color(1, 0, 0), 1.0f)); 
+    scene.objects.push_back(
+        new Plane(
+            Vec3(0, -1, 0),
+            Vec3(0, 1, 0),
+            Color(0.5f, 0.5f, 0.5f)
+        )
+    );
+
+    scene.objects.push_back(
+        new Sphere(
+            Vec3(-2, 0, -5),
+            1.0f,
+            Color(1, 0, 0),
+            0.0f,   // reflectivity
+            0.0f,   // refractivity
+            1.0f    // ior
+        )
+    );
+
+    scene.objects.push_back(
+        new Sphere(
+            Vec3(2, 0, -5),
+            1.0f,
+            Color(1, 1, 1),
+            1.0f,   // reflectividad
+            0.0f,
+            1.0f
+        )
+    );
+
+    scene.objects.push_back(
+        new Sphere(
+            Vec3(0, 0, -5),
+            1.0f,
+            Color(0.8f, 0.9f, 1.0f), // leve tinte azul
+            0.1f,   // reflexión leve
+            0.9f,   // refracción fuerte
+            1.5f    // índice vidrio
+        )
+    );
+
     scene.lights.push_back(Light(Vec3(5, 5, 0), 1.0f));
     scene.lights.push_back(Light(Vec3(-5, 5, 0), 0.7f));
 

@@ -7,4 +7,6 @@ class Object {
 public:
     virtual bool intersect(const Ray& ray, Intersection& hit) const = 0;
     float reflectivity; 
+    float refractivity;
+    float ior;
 };

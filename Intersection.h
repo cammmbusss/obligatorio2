@@ -8,4 +8,6 @@ struct Intersection {
     Vec3 normal;
     Color color;
     float reflectivity;
+    float refractivity; 
+    float ior;
 };

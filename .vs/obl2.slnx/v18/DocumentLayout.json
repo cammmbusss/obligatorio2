@@ -1,7 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Ray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Ray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Ray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Ray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Light.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,16 +90,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -42,6 +115,255 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAowGYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T22:39:44.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sphere.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Sphere.h",
+              "RelativeDocumentMoniker": "Sphere.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Sphere.h",
+              "RelativeToolTip": "Sphere.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:51:36.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sphere.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Sphere.cpp",
+              "RelativeDocumentMoniker": "Sphere.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Sphere.cpp",
+              "RelativeToolTip": "Sphere.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T22:45:16.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Scene.cpp",
+              "RelativeDocumentMoniker": "Scene.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Scene.cpp",
+              "RelativeToolTip": "Scene.cpp",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAowGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T23:16:21.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Intersection.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Intersection.h",
+              "RelativeDocumentMoniker": "Intersection.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Intersection.h",
+              "RelativeToolTip": "Intersection.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:51:04.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Object.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Object.h",
+              "RelativeDocumentMoniker": "Object.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Object.h",
+              "RelativeToolTip": "Object.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:51:23.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Ray.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Ray.h",
+              "RelativeDocumentMoniker": "Ray.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Ray.h",
+              "RelativeToolTip": "Ray.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:50:28.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ray.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Ray.cpp",
+              "RelativeDocumentMoniker": "Ray.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Ray.cpp",
+              "RelativeToolTip": "Ray.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T22:44:33.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Renderer.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Renderer.cpp",
+              "RelativeToolTip": "Renderer.cpp",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowBwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T23:16:40.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Color.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Color.h",
+              "RelativeDocumentMoniker": "Color.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Color.h",
+              "RelativeToolTip": "Color.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:50:44.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Renderer.h",
+              "RelativeDocumentMoniker": "Renderer.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Renderer.h",
+              "RelativeToolTip": "Renderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:52:34.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Plane.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Plane.cpp",
+              "RelativeDocumentMoniker": "Plane.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Plane.cpp",
+              "RelativeToolTip": "Plane.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T23:15:35.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Plane.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Plane.h",
+              "RelativeDocumentMoniker": "Plane.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Plane.h",
+              "RelativeToolTip": "Plane.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:51:46.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Light.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Light.h",
+              "RelativeDocumentMoniker": "Light.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Light.h",
+              "RelativeToolTip": "Light.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:51:57.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Light.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Light.cpp",
+              "RelativeDocumentMoniker": "Light.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Light.cpp",
+              "RelativeToolTip": "Light.cpp",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-10T00:01:30.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Camera.cpp",
+              "RelativeDocumentMoniker": "Camera.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Camera.cpp",
+              "RelativeToolTip": "Camera.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T23:16:00.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Color.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Color.cpp",
+              "RelativeDocumentMoniker": "Color.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Color.cpp",
+              "RelativeToolTip": "Color.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T22:44:55.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Vec3.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Vec3.cpp",
+              "RelativeDocumentMoniker": "Vec3.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Vec3.cpp",
+              "RelativeToolTip": "Vec3.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-09T22:44:02.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Camera.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Camera.h",
+              "RelativeDocumentMoniker": "Camera.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Camera.h",
+              "RelativeToolTip": "Camera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:52:07.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Vec3.h",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Vec3.h",
+              "RelativeDocumentMoniker": "Vec3.h",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obl2\\Vec3.h",
+              "RelativeToolTip": "Vec3.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-09T21:50:00.255Z"
             }
           ]
         }

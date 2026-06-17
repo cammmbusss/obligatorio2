@@ -6,6 +6,7 @@
 #include "Plane.h"
 #include "Renderer.h"
 #include "Camera.h"
+#include "Pyramid.h"
 
 
 
@@ -60,55 +61,112 @@ int main() {
     int width = 800;
     int height = 600;
 
-   
+
     Color* framebuffer = new Color[width * height];
 
     // escena
     Scene scene;
 
+
+    // ==========================
+    // CUARTO (CORNELL BOX SIMPLE)
+    // ==========================
+
+    // Piso
     scene.objects.push_back(
         new Plane(
-            Vec3(0, -1, 0),
-            Vec3(0, 1, 0),
-            Color(0.5f, 0.5f, 0.5f)
+            Vec3(0, -2, 0),     // punto
+            Vec3(0, 1, 0),      // normal
+            Color(0.8f, 0.8f, 0.8f)
         )
     );
 
+    // Techo
+    scene.objects.push_back(
+        new Plane(
+            Vec3(0, 2, 0),
+            Vec3(0, -1, 0),
+            Color(0.8f, 0.8f, 0.8f)
+        )
+    );
+
+    // Pared izquierda (roja)
+    scene.objects.push_back(
+        new Plane(
+            Vec3(-3, 0, 0),
+            Vec3(1, 0, 0),
+            Color(0.8f, 0.2f, 0.2f)
+        )
+    );
+
+    // Pared derecha (verde)
+    scene.objects.push_back(
+        new Plane(
+            Vec3(3, 0, 0),
+            Vec3(-1, 0, 0),
+            Color(0.2f, 0.8f, 0.2f)
+        )
+    );
+
+    // Pared del fondo
+    scene.objects.push_back(
+        new Plane(
+            Vec3(0, 0, -10),
+            Vec3(0, 0, 1),
+            Color(0.9f, 0.9f, 0.9f)
+        )
+    );
+
+    // ==========================
+    // ESFERAS
+    // ==========================
+
+    // esfera roja mate
     scene.objects.push_back(
         new Sphere(
-            Vec3(-2, 0, -5),
+            Vec3(-1.5, -1, -6),
             1.0f,
             Color(1, 0, 0),
-            0.0f,   // reflectivity
-            0.0f,   // refractivity
-            1.0f    // ior
-        )
-    );
-
-    scene.objects.push_back(
-        new Sphere(
-            Vec3(2, 0, -5),
-            1.0f,
-            Color(1, 1, 1),
-            1.0f,   // reflectividad
+            0.0f,
             0.0f,
             1.0f
         )
     );
 
+    // espejo
     scene.objects.push_back(
         new Sphere(
-            Vec3(0, 0, -5),
+            Vec3(1.5, -1, -6),
             1.0f,
-            Color(0.8f, 0.9f, 1.0f), // leve tinte azul
-            0.1f,   // reflexión leve
-            0.9f,   // refracción fuerte
-            1.5f    // índice vidrio
+            Color(1, 1, 1),
+            1.0f,
+            0.0f,
+            1.0f
         )
     );
 
-    scene.lights.push_back(Light(Vec3(5, 5, 0), 1.0f));
-    scene.lights.push_back(Light(Vec3(-5, 5, 0), 0.7f));
+    // vidrio (la importante)
+    //scene.objects.push_back(
+      //  new Sphere(
+        //    Vec3(0, -1, -5),
+          //  1.0f,
+           // Color(0.8f, 0.9f, 1.0f),
+           // 0.1f,
+          //  0.9f,
+           // 1.5f
+        //)
+    //);
+
+    scene.objects.push_back(
+        new Pyramid(Vec3(0, 0, -6), 1.5f, Color(1, 0, 0))
+    );
+
+    // ==========================
+    // LUCES
+    // ==========================
+
+    scene.lights.push_back(Light(Vec3(0, 1.5, -5), 1.5f));
+    scene.lights.push_back(Light(Vec3(-2, 1, -3), 0.5f));
 
     
     Camera camera(Vec3(0, 0, 0));

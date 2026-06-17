@@ -144,6 +144,8 @@
     <ClInclude Include="Intersection.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Pyramid.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Renderer.h" />
@@ -156,6 +158,8 @@
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pyramid.cpp" />
+    <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Renderer.cpp" />

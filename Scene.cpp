@@ -57,13 +57,20 @@ Color Scene::trace(const Ray& ray, int depth) {
     if (depth > 4) return Color(0, 0, 0);
 
     Intersection closestHit;
-    closestHit.t = 1e30;
+    closestHit.t = 1e30f;
 
     bool hitSomething = false;
 
     for (auto obj : objects) {
-        if (obj->intersect(ray, closestHit)) {
-            hitSomething = true;
+
+        Intersection tempHit;
+
+        if (obj->intersect(ray, tempHit)) {
+
+            if (tempHit.t > 0.001f && tempHit.t < closestHit.t) {
+                closestHit = tempHit;
+                hitSomething = true;
+            }
         }
     }
 
@@ -72,21 +79,26 @@ Color Scene::trace(const Ray& ray, int depth) {
 
     Color finalColor(0, 0, 0);
 
+    // ==========================
+    // ILUMINACIÓN DIFUSA
+    // ==========================
     for (auto& light : lights) {
 
         Vec3 lightDir = (light.position - closestHit.point).normalize();
 
-        float diff = closestHit.normal.dot(lightDir);
-        if (diff < 0) diff = 0;
+        float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
 
         finalColor = finalColor + closestHit.color * (light.intensity * diff);
     }
 
-    float ambient = 0.1f;
-    finalColor = finalColor + closestHit.color * ambient;
+    // ambient
+    finalColor = finalColor + closestHit.color * 0.1f;
 
-    Vec3 reflectDir = ray.direction -
-        closestHit.normal * 2.0f * ray.direction.dot(closestHit.normal);
+    // ==========================
+    // REFLEXIÓN
+    // ==========================
+    Vec3 reflectDir =
+        ray.direction - closestHit.normal * 2.0f * ray.direction.dot(closestHit.normal);
 
     reflectDir = reflectDir.normalize();
 
@@ -94,21 +106,37 @@ Color Scene::trace(const Ray& ray, int depth) {
     Ray reflectRay(reflectOrigin, reflectDir);
     Color reflectColor = trace(reflectRay, depth + 1);
 
-    Vec3 refractDir = refract(ray.direction, closestHit.normal, closestHit.ior);
-    refractDir = refractDir.normalize();
-
-    Vec3 refractOrigin = closestHit.point - closestHit.normal * 0.001f;
-    Ray refractRay(refractOrigin, refractDir);
-    Color refractColor = trace(refractRay, depth + 1);
-
-    float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
+    // ==========================
+    // REFRACCIÓN (solo si corresponde)
+    // ==========================
+    Color refractColor(0, 0, 0);
 
     if (closestHit.refractivity > 0.0f) {
+        Vec3 refractDir = refract(ray.direction, closestHit.normal, closestHit.ior);
+        refractDir = refractDir.normalize();
+
+        Vec3 refractOrigin = closestHit.point - closestHit.normal * 0.001f;
+        Ray refractRay(refractOrigin, refractDir);
+        refractColor = trace(refractRay, depth + 1);
+    }
+
+    // ==========================
+    // FRESNEL
+    // ==========================
+    float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
+
+    // ==========================
+    // COMBINACIÓN FINAL
+    // ==========================
+    if (closestHit.refractivity > 0.0f) {
+
         finalColor =
             reflectColor * kr +
             refractColor * (1.0f - kr);
+
     }
     else if (closestHit.reflectivity > 0.0f) {
+
         finalColor =
             finalColor * (1.0f - closestHit.reflectivity) +
             reflectColor * closestHit.reflectivity;

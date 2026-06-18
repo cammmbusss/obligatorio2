@@ -64,8 +64,6 @@ int main() {
 
 
     Color* framebuffer = new Color[width * height];
-
-    // escena
     Scene scene;
 
 
@@ -74,85 +72,64 @@ int main() {
     // ==========================
 
     // Piso
-    scene.objects.push_back(
-        new Plane(
-            Vec3(0, -2, 0),     // punto
-            Vec3(0, 1, 0),      // normal
-            Color(0.8f, 0.8f, 0.8f)
-        )
-    );
+    scene.objects.push_back(new Plane(
+        Vec3(0, -2, 0), Vec3(0, 1, 0),   // piso en y = -2
+        Color(0.8f, 0.8f, 0.8f)
+    ));
 
-    // Techo
-    scene.objects.push_back(
-        new Plane(
-            Vec3(0, 2, 0),
-            Vec3(0, -1, 0),
-            Color(0.8f, 0.8f, 0.8f)
-        )
-    );
+    scene.objects.push_back(new Plane(
+        Vec3(0, 2, 0), Vec3(0, -1, 0),   // techo en y = 2
+        Color(0.8f, 0.8f, 0.8f)
+    ));
+    scene.objects.push_back(new Plane(
+        Vec3(-3, 0, 0), Vec3(1, 0, 0),   // pared izquierda (roja)
+        Color(0.8f, 0.2f, 0.2f)
+    ));
 
-    // Pared izquierda (roja)
-    scene.objects.push_back(
-        new Plane(
-            Vec3(-3, 0, 0),
-            Vec3(1, 0, 0),
-            Color(0.8f, 0.2f, 0.2f)
-        )
-    );
+    scene.objects.push_back(new Plane(
+        Vec3(3, 0, 0), Vec3(-1, 0, 0),   // pared derecha (verde)
+        Color(0.2f, 0.8f, 0.2f)
+    ));
+    scene.objects.push_back(new Plane(
+        Vec3(0, 0, -10), Vec3(0, 0, 1),  // pared del fondo
+        Color(0.9f, 0.9f, 0.9f)
+    ));
 
-    // Pared derecha (verde)
-    scene.objects.push_back(
-        new Plane(
-            Vec3(3, 0, 0),
-            Vec3(-1, 0, 0),
-            Color(0.2f, 0.8f, 0.2f)
-        )
-    );
-
-    // Pared del fondo
-    scene.objects.push_back(
-        new Plane(
-            Vec3(0, 0, -10),
-            Vec3(0, 0, 1),
-            Color(0.9f, 0.9f, 0.9f)
-        )
-    );
-
-    Color colorMesa(0.55f, 0.55f, 0.55f);
+    Color colorMesa(0.45f, 0.30f, 0.15f);
 
     // Tablero: ancho y plano, apoyado sobre las patas
 // y va de -1.3 a -1.0  (cerca del piso pero elevado)
     scene.objects.push_back(new Box(
-        Vec3(-1.8f, -1.3f, -8.5f),   // min: x izq, Y ABAJO del tablero, z frente
-        Vec3(1.8f, -1.0f, -4.5f),   // max: x der, Y ARRIBA del tablero, z atras
+        Vec3(-1.8f, -1.0f, -8.5f),
+        Vec3(1.8f, -0.8f, -4.5f),
         colorMesa
     ));
 
     // Pata delantera izquierda
     scene.objects.push_back(new Box(
-        Vec3(-1.6f, -2.0f, -5.0f),   // desde el piso (y=-2)
-        Vec3(-1.2f, -1.3f, -4.6f),   // hasta abajo del tablero
+        Vec3(-1.7f, -2.0f, -5.2f),
+        Vec3(-1.4f, -1.0f, -4.9f),
         colorMesa
     ));
 
     // Pata delantera derecha
     scene.objects.push_back(new Box(
-        Vec3(1.2f, -2.0f, -5.0f),
-        Vec3(1.6f, -1.3f, -4.6f),
+        Vec3(1.4f, -2.0f, -5.2f),
+        Vec3(1.7f, -1.0f, -4.9f),
         colorMesa
     ));
 
     // Pata trasera izquierda
     scene.objects.push_back(new Box(
-        Vec3(-1.6f, -2.0f, -8.4f),
-        Vec3(-1.2f, -1.3f, -8.0f),
+        Vec3(-1.7f, -2.0f, -8.3f),
+        Vec3(-1.4f, -1.0f, -8.0f),
         colorMesa
     ));
 
     // Pata trasera derecha
     scene.objects.push_back(new Box(
-        Vec3(1.2f, -2.0f, -8.4f),
-        Vec3(1.6f, -1.3f, -8.0f),
+        Vec3(1.4f, -2.0f, -8.3f),
+        Vec3(1.7f, -1.0f, -8.0f),
         colorMesa
     ));
 
@@ -161,7 +138,7 @@ int main() {
     // ==========================
 
 
-    scene.objects.push_back(new Sphere(
+    /* scene.objects.push_back(new Sphere(
         Vec3(-1.0f, -0.5f, -6.5f),  // centro subido para apoyarse en y=-1.5
         1.0f,
         Color(0.9f, 0.8f, 0.85f),
@@ -190,11 +167,29 @@ int main() {
         0.6f,
         Color(1.0f, 1.0f, 1.0f),
         0.95f, 0.0f, 1.0f
+    )); */
+
+    // Esfera transparente izquierda (radio 0.6, centro y = -0.8 + 0.6 = -0.2)
+    scene.objects.push_back(new Sphere(
+        Vec3(-0.9f, -0.2f, -6.5f),
+        0.6f,
+        Color(0.9f, 0.8f, 0.85f),
+        0.1f, 0.9f, 1.5f   // poca reflexión, mucha refracción
     ));
 
-    scene.objects.push_back(
-        new Pyramid(Vec3(0, 0, -6), 1.5f, Color(1, 0, 0))
-    );
+    // Esfera espejo derecha (radio 0.5, centro y = -0.8 + 0.5 = -0.3)
+    scene.objects.push_back(new Sphere(
+        Vec3(0.9f, -0.3f, -6.0f),
+        0.5f,
+        Color(1.0f, 1.0f, 1.0f),
+        0.95f, 0.0f, 1.0f
+    ));
+
+    scene.objects.push_back(new Pyramid(
+        Vec3(0.0f, -0.8f, -6.8f),
+        0.6f,
+        Color(1.0f, 0.3f, 0.1f)
+    ));
 
     // ==========================
     // LUCES

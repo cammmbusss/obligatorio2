@@ -44,8 +44,6 @@ bool Triangle::intersect(const Ray& ray, Intersection& hit) const {
         hit.t = t;
         hit.point = ray.origin + ray.direction * t;
 
-        // ✅ CORRECCIÓN: edge2.cross(edge1) en lugar de edge1.cross(edge2)
-        // Esto hace que la normal apunte hacia la cámara (hacia afuera)
         Vec3 normal = edge2.cross(edge1).normalize();
         if (normal.dot(ray.direction) > 0.0f)
             normal = normal * -1.0f;

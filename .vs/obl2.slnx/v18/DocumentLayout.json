@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,6 +61,10 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Box.h",
@@ -68,7 +72,7 @@
               "RelativeDocumentMoniker": "Box.h",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Box.h",
               "RelativeToolTip": "Box.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwEQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-06-18T19:42:02.79Z",
               "EditorCaption": ""
@@ -81,7 +85,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAALYAAAAAAAAAAAAmwMsAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAmwL8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-17T22:50:18.921Z",
               "EditorCaption": ""
@@ -120,7 +124,7 @@
               "RelativeDocumentMoniker": "Triangle.cpp",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Triangle.cpp",
               "RelativeToolTip": "Triangle.cpp",
-              "ViewState": "AgIAACUAAAAAAAAAAAAowD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-17T22:38:22.836Z",
               "EditorCaption": ""

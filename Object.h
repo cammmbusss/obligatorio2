@@ -1,6 +1,7 @@
 #pragma once
 #include "Ray.h"
 #include "Intersection.h"
+#include <cmath>
 
 
 class Object {

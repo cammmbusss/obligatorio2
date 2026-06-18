@@ -7,6 +7,7 @@
 #include "Renderer.h"
 #include "Camera.h"
 #include "Pyramid.h"
+#include "Box.h"
 
 
 
@@ -117,45 +118,79 @@ int main() {
         )
     );
 
+    Color colorMesa(0.55f, 0.55f, 0.55f);
+
+    // Tablero: ancho y plano, apoyado sobre las patas
+// y va de -1.3 a -1.0  (cerca del piso pero elevado)
+    scene.objects.push_back(new Box(
+        Vec3(-1.8f, -1.3f, -8.5f),   // min: x izq, Y ABAJO del tablero, z frente
+        Vec3(1.8f, -1.0f, -4.5f),   // max: x der, Y ARRIBA del tablero, z atras
+        colorMesa
+    ));
+
+    // Pata delantera izquierda
+    scene.objects.push_back(new Box(
+        Vec3(-1.6f, -2.0f, -5.0f),   // desde el piso (y=-2)
+        Vec3(-1.2f, -1.3f, -4.6f),   // hasta abajo del tablero
+        colorMesa
+    ));
+
+    // Pata delantera derecha
+    scene.objects.push_back(new Box(
+        Vec3(1.2f, -2.0f, -5.0f),
+        Vec3(1.6f, -1.3f, -4.6f),
+        colorMesa
+    ));
+
+    // Pata trasera izquierda
+    scene.objects.push_back(new Box(
+        Vec3(-1.6f, -2.0f, -8.4f),
+        Vec3(-1.2f, -1.3f, -8.0f),
+        colorMesa
+    ));
+
+    // Pata trasera derecha
+    scene.objects.push_back(new Box(
+        Vec3(1.2f, -2.0f, -8.4f),
+        Vec3(1.6f, -1.3f, -8.0f),
+        colorMesa
+    ));
+
     // ==========================
     // ESFERAS
     // ==========================
 
-    // esfera roja mate
-    scene.objects.push_back(
-        new Sphere(
-            Vec3(-1.5, -1, -6),
-            1.0f,
-            Color(1, 0, 0),
-            0.0f,
-            0.0f,
-            1.0f
-        )
-    );
 
-    // espejo
-    scene.objects.push_back(
-        new Sphere(
-            Vec3(1.5, -1, -6),
-            1.0f,
-            Color(1, 1, 1),
-            1.0f,
-            0.0f,
-            1.0f
-        )
-    );
+    scene.objects.push_back(new Sphere(
+        Vec3(-1.0f, -0.5f, -6.5f),  // centro subido para apoyarse en y=-1.5
+        1.0f,
+        Color(0.9f, 0.8f, 0.85f),
+        0.3f, 0.7f, 1.5f
+    ));
 
-    // vidrio (la importante)
-    //scene.objects.push_back(
-      //  new Sphere(
-        //    Vec3(0, -1, -5),
-          //  1.0f,
-           // Color(0.8f, 0.9f, 1.0f),
-           // 0.1f,
-          //  0.9f,
-           // 1.5f
-        //)
-    //);
+    scene.objects.push_back(new Sphere(
+        Vec3(1.2f, -0.5f, -6.0f),
+        0.6f,
+        Color(1.0f, 1.0f, 1.0f),
+        0.95f, 0.0f, 1.0f
+    ));
+
+    // Esfera izquierda (transparente/reflectiva)
+ // centro en y = -1.0 + radio = -1.0 + 0.7 = -0.3
+    scene.objects.push_back(new Sphere(
+        Vec3(-0.8f, -0.3f, -6.5f),
+        0.7f,
+        Color(0.9f, 0.8f, 0.85f),
+        0.3f, 0.0f, 1.5f
+    ));
+
+    // Esfera derecha (espejo)
+    scene.objects.push_back(new Sphere(
+        Vec3(0.9f, -0.4f, -6.0f),
+        0.6f,
+        Color(1.0f, 1.0f, 1.0f),
+        0.95f, 0.0f, 1.0f
+    ));
 
     scene.objects.push_back(
         new Pyramid(Vec3(0, 0, -6), 1.5f, Color(1, 0, 0))
@@ -165,8 +200,8 @@ int main() {
     // LUCES
     // ==========================
 
-    scene.lights.push_back(Light(Vec3(0, 1.5, -5), 1.5f));
-    scene.lights.push_back(Light(Vec3(-2, 1, -3), 0.5f));
+    scene.lights.push_back(Light(Vec3(0.0f, 1.5f, -5.0f), 1.5f));
+    scene.lights.push_back(Light(Vec3(-2.0f, 1.0f, -3.0f), 0.5f));
 
     
     Camera camera(Vec3(0, 0, 0));

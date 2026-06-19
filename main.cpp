@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "Pyramid.h"
 #include "Box.h"
+#include <algorithm>
 
 
 
@@ -46,13 +47,21 @@ void saveBMP(const char* filename, int width, int height, Color* data) {
     file.write((char*)fileHeader, 14);
     file.write((char*)infoHeader, 40);
 
-    for (int i = 0; i < width * height; i++) {
-        unsigned char r = (unsigned char)(255 * data[i].r);
-        unsigned char g = (unsigned char)(255 * data[i].g);
-        unsigned char b = (unsigned char)(255 * data[i].b);
+    for (int y = height - 1; y >= 0; y--) {
+        for (int x = 0; x < width; x++) {
+            Color c = data[y * width + x];
 
-        unsigned char color[] = { b, g, r };
-        file.write((char*)color, 3);
+            float rr = std::clamp(c.r, 0.0f, 1.0f);
+            float gg = std::clamp(c.g, 0.0f, 1.0f);
+            float bb = std::clamp(c.b, 0.0f, 1.0f);
+
+            unsigned char r = (unsigned char)(255 * rr);
+            unsigned char g = (unsigned char)(255 * gg);
+            unsigned char b = (unsigned char)(255 * bb);
+
+            unsigned char color[] = { b, g, r };
+            file.write((char*)color, 3);
+        }
     }
 
     file.close();
@@ -67,19 +76,15 @@ int main() {
     Scene scene;
 
 
-    // ==========================
-    // CUARTO (CORNELL BOX SIMPLE)
-    // ==========================
-
     // Piso
     scene.objects.push_back(new Plane(
         Vec3(0, -2, 0), Vec3(0, 1, 0),   // piso en y = -2
-        Color(0.8f, 0.8f, 0.8f)
+        Color(1.0f, 1.0f, 1.0f)
     ));
 
     scene.objects.push_back(new Plane(
         Vec3(0, 2, 0), Vec3(0, -1, 0),   // techo en y = 2
-        Color(0.8f, 0.8f, 0.8f)
+        Color(1.0f, 1.0f, 1.0f)
     ));
     scene.objects.push_back(new Plane(
         Vec3(-3, 0, 0), Vec3(1, 0, 0),   // pared izquierda (roja)
@@ -92,83 +97,57 @@ int main() {
     ));
     scene.objects.push_back(new Plane(
         Vec3(0, 0, -10), Vec3(0, 0, 1),  // pared del fondo
-        Color(0.9f, 0.9f, 0.9f)
+        Color(1.0f, 1.0f, 1.0f)
+    ));
+    scene.objects.push_back(new Plane(
+        Vec3(0, 0, 2),      // pared frontal
+        Vec3(0, 0, -1),
+        Color(1.0f, 1.0f, 1.0f)
     ));
 
     Color colorMesa(0.45f, 0.30f, 0.15f);
 
-    // Tablero: ancho y plano, apoyado sobre las patas
-// y va de -1.3 a -1.0  (cerca del piso pero elevado)
+    float alturaPata = 1.0f;
+	float alturaMesa = 0.2f;
+    // Tabla: ancho y plano, apoyado sobre las patas
+    // y va de -1.3 a -1.0  (cerca del piso pero elevado)
     scene.objects.push_back(new Box(
-        Vec3(-1.8f, -1.0f, -8.5f),
-        Vec3(1.8f, -0.8f, -4.5f),
+        Vec3(-1.8f, -2.0f + alturaPata, -8.5f),
+        Vec3(1.8f, -2.0f + alturaPata + alturaMesa, -4.5f),
         colorMesa
     ));
 
+	
+
     // Pata delantera izquierda
     scene.objects.push_back(new Box(
-        Vec3(-1.7f, -2.0f, -5.2f),
-        Vec3(-1.4f, -1.0f, -4.9f),
+        Vec3(-1.7f, -2.0f , -5.2f),
+        Vec3(-1.4f, -2.0f + alturaPata , -4.9f),
         colorMesa
     ));
 
     // Pata delantera derecha
     scene.objects.push_back(new Box(
-        Vec3(1.4f, -2.0f, -5.2f),
-        Vec3(1.7f, -1.0f, -4.9f),
+        Vec3(1.4f, -2.0f  , -5.2f),
+        Vec3(1.7f, -2.0f + alturaPata , -4.9f),
         colorMesa
     ));
 
     // Pata trasera izquierda
     scene.objects.push_back(new Box(
-        Vec3(-1.7f, -2.0f, -8.3f),
-        Vec3(-1.4f, -1.0f, -8.0f),
+        Vec3(-1.7f, -2.0f , -8.3f),
+        Vec3(-1.4f, -2.0f + alturaPata , -8.0f),
         colorMesa
     ));
 
     // Pata trasera derecha
     scene.objects.push_back(new Box(
-        Vec3(1.4f, -2.0f, -8.3f),
-        Vec3(1.7f, -1.0f, -8.0f),
+        Vec3(1.4f, -2.0f , -8.3f),
+        Vec3(1.7f, -2.0f + alturaPata, -8.0f),
         colorMesa
     ));
 
-    // ==========================
-    // ESFERAS
-    // ==========================
-
-
-    /* scene.objects.push_back(new Sphere(
-        Vec3(-1.0f, -0.5f, -6.5f),  // centro subido para apoyarse en y=-1.5
-        1.0f,
-        Color(0.9f, 0.8f, 0.85f),
-        0.3f, 0.7f, 1.5f
-    ));
-
-    scene.objects.push_back(new Sphere(
-        Vec3(1.2f, -0.5f, -6.0f),
-        0.6f,
-        Color(1.0f, 1.0f, 1.0f),
-        0.95f, 0.0f, 1.0f
-    ));
-
-    // Esfera izquierda (transparente/reflectiva)
- // centro en y = -1.0 + radio = -1.0 + 0.7 = -0.3
-    scene.objects.push_back(new Sphere(
-        Vec3(-0.8f, -0.3f, -6.5f),
-        0.7f,
-        Color(0.9f, 0.8f, 0.85f),
-        0.3f, 0.0f, 1.5f
-    ));
-
-    // Esfera derecha (espejo)
-    scene.objects.push_back(new Sphere(
-        Vec3(0.9f, -0.4f, -6.0f),
-        0.6f,
-        Color(1.0f, 1.0f, 1.0f),
-        0.95f, 0.0f, 1.0f
-    )); */
-
+    
     // Esfera transparente izquierda (radio 0.6, centro y = -0.8 + 0.6 = -0.2)
     scene.objects.push_back(new Sphere(
         Vec3(-0.9f, -0.2f, -6.5f),
@@ -191,15 +170,13 @@ int main() {
         Color(1.0f, 0.3f, 0.1f)
     ));
 
-    // ==========================
-    // LUCES
-    // ==========================
+    //LUCES
 
-    scene.lights.push_back(Light(Vec3(0.0f, 1.5f, -5.0f), 1.5f));
-    scene.lights.push_back(Light(Vec3(-2.0f, 1.0f, -3.0f), 0.5f));
-
+    scene.lights.push_back(Light(Vec3(0.0f, 1.3f, -5.8f), 3.5f));   // principal
+    scene.lights.push_back(Light(Vec3(-1.5f, 0.8f, -4.5f), 2.0f));  // relleno izquierda
+    scene.lights.push_back(Light(Vec3(1.5f, 0.8f, -4.5f), 2.0f));   // relleno derecha
     
-    Camera camera(Vec3(0, 0, 0));
+    Camera camera(Vec3(0, 0, -2.0f));
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -216,7 +193,7 @@ int main() {
     }
 
     //guardo las imagenes
-    saveBMP("C:\\Users\\Usuario\\Desktop\\output.bmp", width, height, framebuffer);
+    saveBMP("C:\\Users\\matie\\Desktop\\output.bmp", width, height, framebuffer);
 
     std::cout << "Render terminado: output.bmp" << std::endl;
 

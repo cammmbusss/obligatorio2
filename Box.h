@@ -40,9 +40,9 @@ public:
         add(v100, v000, v010);
         add(v100, v010, v110);
 
-        // Derecha (+X) — normal apunta a la derecha
-        add(v100, v101, v111);
-        add(v100, v111, v110);
+        // Derecha (+X)
+        add(v100, v111, v101);
+        add(v100, v110, v111);
 
         // Izquierda (-X) — normal apunta a la izquierda
         add(v000, v001, v011);

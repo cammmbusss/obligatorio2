@@ -19,5 +19,9 @@ bool Plane::intersect(const Ray& ray, Intersection& hit) const {
     hit.normal = normal;
     hit.color = color;
 
+    hit.reflectivity = 0.0f;
+    hit.refractivity = 0.0f;
+    hit.ior = 1.0f;
+
     return true;
 }

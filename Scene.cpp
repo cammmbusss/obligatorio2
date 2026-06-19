@@ -1,6 +1,6 @@
 #include "Scene.h"
 #include <algorithm>
-
+#include <cmath>
 Vec3 refract(const Vec3& I, const Vec3& N, float ior) {
     float cosi = std::clamp(I.dot(N), -1.0f, 1.0f);
     float etai = 1.0f;
@@ -54,7 +54,10 @@ float fresnel(const Vec3& I, const Vec3& N, float ior) {
 
 Color Scene::trace(const Ray& ray, int depth) {
 
-    if (depth > 4) return Color(0, 0, 0);
+    Color background(0.85f, 0.85f, 0.85f);
+
+    if (depth > 4)
+        return background;
 
     Intersection closestHit;
     closestHit.t = 1e30f;
@@ -62,11 +65,9 @@ Color Scene::trace(const Ray& ray, int depth) {
     bool hitSomething = false;
 
     for (auto obj : objects) {
-
         Intersection tempHit;
 
         if (obj->intersect(ray, tempHit)) {
-
             if (tempHit.t > 0.001f && tempHit.t < closestHit.t) {
                 closestHit = tempHit;
                 hitSomething = true;
@@ -75,40 +76,63 @@ Color Scene::trace(const Ray& ray, int depth) {
     }
 
     if (!hitSomething)
-        return Color(0, 0, 0);
+        return background;
 
     Color finalColor(0, 0, 0);
 
-    // ==========================
-    // ILUMINACIÓN DIFUSA
-    // ==========================
+    // ILUMINACIÓN DIFUSA + SHADOW RAYS
     for (auto& light : lights) {
 
-        Vec3 lightDir = (light.position - closestHit.point).normalize();
+        Vec3 lightVec = light.position - closestHit.point;
+        float dist2 = lightVec.dot(lightVec);
+        float lightDistance = sqrt(dist2);
 
-        float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
+        Vec3 lightDir = lightVec.normalize();
 
-        finalColor = finalColor + closestHit.color * (light.intensity * diff);
+        Vec3 shadowOrigin = closestHit.point + closestHit.normal * 0.001f;
+        Ray shadowRay(shadowOrigin, lightDir);
+
+        bool inShadow = false;
+
+        for (auto obj : objects) {
+            Intersection shadowHit;
+
+            if (obj->intersect(shadowRay, shadowHit)) {
+                if (shadowHit.t > 0.001f && shadowHit.t < lightDistance) {
+                    inShadow = true;
+                    break;
+                }
+            }
+        }
+
+        if (!inShadow) {
+            float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
+
+            float attenuation = light.intensity / (1.0f + dist2);
+
+            finalColor = finalColor + closestHit.color * (attenuation * diff);
+        }
     }
 
-    // ambient
-    finalColor = finalColor + closestHit.color * 0.1f;
+    // Ambiente suave
+    finalColor = finalColor + closestHit.color * 0.18f;
 
-    // ==========================
     // REFLEXIÓN
-    // ==========================
-    Vec3 reflectDir =
-        ray.direction - closestHit.normal * 2.0f * ray.direction.dot(closestHit.normal);
+    Color reflectColor(0, 0, 0);
 
-    reflectDir = reflectDir.normalize();
+    if (closestHit.reflectivity > 0.0f || closestHit.refractivity > 0.0f) {
+        Vec3 reflectDir =
+            ray.direction - closestHit.normal * 2.0f * ray.direction.dot(closestHit.normal);
 
-    Vec3 reflectOrigin = closestHit.point + closestHit.normal * 0.001f;
-    Ray reflectRay(reflectOrigin, reflectDir);
-    Color reflectColor = trace(reflectRay, depth + 1);
+        reflectDir = reflectDir.normalize();
 
-    // ==========================
-    // REFRACCIÓN (solo si corresponde)
-    // ==========================
+        Vec3 reflectOrigin = closestHit.point + closestHit.normal * 0.001f;
+        Ray reflectRay(reflectOrigin, reflectDir);
+
+        reflectColor = trace(reflectRay, depth + 1);
+    }
+
+    // REFRACCIÓN
     Color refractColor(0, 0, 0);
 
     if (closestHit.refractivity > 0.0f) {
@@ -117,26 +141,19 @@ Color Scene::trace(const Ray& ray, int depth) {
 
         Vec3 refractOrigin = closestHit.point - closestHit.normal * 0.001f;
         Ray refractRay(refractOrigin, refractDir);
+
         refractColor = trace(refractRay, depth + 1);
     }
 
-    // ==========================
-    // FRESNEL
-    // ==========================
-    float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
-
-    // ==========================
     // COMBINACIÓN FINAL
-    // ==========================
     if (closestHit.refractivity > 0.0f) {
+        float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
 
         finalColor =
             reflectColor * kr +
             refractColor * (1.0f - kr);
-
     }
     else if (closestHit.reflectivity > 0.0f) {
-
         finalColor =
             finalColor * (1.0f - closestHit.reflectivity) +
             reflectColor * closestHit.reflectivity;

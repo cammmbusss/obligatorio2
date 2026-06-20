@@ -1,5 +1,6 @@
 #include "Sphere.h"
 #include <cmath>
+#include <iostream>
 
 
 Sphere::Sphere(Vec3 c, float r, Color col,
@@ -53,6 +54,5 @@ bool Sphere::intersect(const Ray& ray, Intersection& hit) const {
     hit.reflectivity = reflectivity;
     hit.refractivity = refractivity;
     hit.ior = ior;
-
     return true;
 }

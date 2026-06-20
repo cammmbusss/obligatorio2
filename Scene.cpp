@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 Vec3 refract(const Vec3& I, const Vec3& N, float ior) {
     float cosi = std::clamp(I.dot(N), -1.0f, 1.0f);
     float etai = 1.0f;
@@ -56,7 +57,7 @@ Color Scene::trace(const Ray& ray, int depth) {
 
     Color background(0.85f, 0.85f, 0.85f);
 
-    if (depth > 4)
+    if (depth > 10)
         return background;
 
     Intersection closestHit;
@@ -98,7 +99,10 @@ Color Scene::trace(const Ray& ray, int depth) {
             Intersection shadowHit;
 
             if (obj->intersect(shadowRay, shadowHit)) {
-                if (shadowHit.t > 0.001f && shadowHit.t < lightDistance) {
+                if (shadowHit.t > 0.001f &&
+                    shadowHit.t < lightDistance &&
+                    shadowHit.refractivity < 0.5f) {
+
                     inShadow = true;
                     break;
                 }
@@ -107,15 +111,13 @@ Color Scene::trace(const Ray& ray, int depth) {
 
         if (!inShadow) {
             float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
-
             float attenuation = light.intensity / (1.0f + dist2);
 
             finalColor = finalColor + closestHit.color * (attenuation * diff);
         }
     }
 
-    // Ambiente suave
-    finalColor = finalColor + closestHit.color * 0.18f;
+    finalColor = finalColor + closestHit.color * 0.22f;
 
     // REFLEXIÓN
     Color reflectColor(0, 0, 0);
@@ -139,7 +141,7 @@ Color Scene::trace(const Ray& ray, int depth) {
         Vec3 refractDir = refract(ray.direction, closestHit.normal, closestHit.ior);
         refractDir = refractDir.normalize();
 
-        Vec3 refractOrigin = closestHit.point - closestHit.normal * 0.001f;
+        Vec3 refractOrigin = closestHit.point + refractDir * 0.01f;
         Ray refractRay(refractOrigin, refractDir);
 
         refractColor = trace(refractRay, depth + 1);

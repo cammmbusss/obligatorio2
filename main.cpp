@@ -96,13 +96,13 @@ int main() {
         Color(0.2f, 0.8f, 0.2f)
     ));
     scene.objects.push_back(new Plane(
-        Vec3(0, 0, -10), Vec3(0, 0, 1),  // pared del fondo
+        Vec3(0, 0, -9), Vec3(0, 0, 1),  // pared del fondo
         Color(1.0f, 1.0f, 1.0f)
     ));
     scene.objects.push_back(new Plane(
         Vec3(0, 0, 2),      // pared frontal
         Vec3(0, 0, -1),
-        Color(1.0f, 1.0f, 1.0f)
+        Color(0.0f, 0.0f, 0.0f)
     ));
 
     Color colorMesa(0.45f, 0.30f, 0.15f);
@@ -117,7 +117,6 @@ int main() {
         colorMesa
     ));
 
-	
 
     // Pata delantera izquierda
     scene.objects.push_back(new Box(
@@ -147,35 +146,47 @@ int main() {
         colorMesa
     ));
 
-    
-    // Esfera transparente izquierda (radio 0.6, centro y = -0.8 + 0.6 = -0.2)
-    scene.objects.push_back(new Sphere(
-        Vec3(-0.9f, -0.2f, -6.5f),
-        0.6f,
-        Color(0.9f, 0.8f, 0.85f),
-        0.1f, 0.9f, 1.5f   // poca reflexión, mucha refracción
+    // =====================
+    // OBJETOS SOBRE LA MESA
+    // =====================
+
+    // Pirámide azul atrás (grande)
+    scene.objects.push_back(new Pyramid(
+        Vec3(-0.8f, -0.8f, -8.2f),
+        1.2f,
+        Color(0.2f, 0.2f, 1.0f)
     ));
 
-    // Esfera espejo derecha (radio 0.5, centro y = -0.8 + 0.5 = -0.3)
+    // Vidrio adelante
     scene.objects.push_back(new Sphere(
-        Vec3(0.9f, -0.3f, -6.0f),
+        Vec3(-1.1f, -0.2f, -5.8f),
+        0.6f,
+        Color(1.0f, 0.0f, 0.0f),
+        0.05f, 0.95f, 1.5f
+    ));
+
+    // Pirámide naranja centro
+    scene.objects.push_back(new Pyramid(
+        Vec3(0.2f, -0.8f, -6.8f),
+        0.8f,
+        Color(1.0f, 0.35f, 0.1f)
+    ));
+
+    // Esfera espejo derecha
+    scene.objects.push_back(new Sphere(
+        Vec3(1.2f, -0.3f, -6.0f),
         0.5f,
         Color(1.0f, 1.0f, 1.0f),
         0.95f, 0.0f, 1.0f
     ));
 
-    scene.objects.push_back(new Pyramid(
-        Vec3(0.0f, -0.8f, -6.8f),
-        0.6f,
-        Color(1.0f, 0.3f, 0.1f)
-    ));
-
     //LUCES
 
-    scene.lights.push_back(Light(Vec3(0.0f, 1.3f, -5.8f), 3.5f));   // principal
+    scene.lights.push_back(Light(Vec3(0.0f, 1.0f, -5.8f), 3.5f));   // principal
     scene.lights.push_back(Light(Vec3(-1.5f, 0.8f, -4.5f), 2.0f));  // relleno izquierda
     scene.lights.push_back(Light(Vec3(1.5f, 0.8f, -4.5f), 2.0f));   // relleno derecha
-    
+    scene.lights.push_back(Light(Vec3(0.0f, 1.0f, -8.7f), 0.4f)); 
+
     Camera camera(Vec3(0, 0, -2.0f));
 
     for (int y = 0; y < height; y++) {

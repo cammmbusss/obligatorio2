@@ -81,7 +81,9 @@ Color Scene::trace(const Ray& ray, int depth) {
 
     Color finalColor(0, 0, 0);
 
+    // ==========================
     // ILUMINACIÓN DIFUSA + SHADOW RAYS
+    // ==========================
     for (auto& light : lights) {
 
         Vec3 lightVec = light.position - closestHit.point;
@@ -117,9 +119,12 @@ Color Scene::trace(const Ray& ray, int depth) {
         }
     }
 
-    finalColor = finalColor + closestHit.color * 0.22f;
+    // Ambiente suave
+    finalColor = finalColor + closestHit.color * 0.18f;
 
+    // ==========================
     // REFLEXIÓN
+    // ==========================
     Color reflectColor(0, 0, 0);
 
     if (closestHit.reflectivity > 0.0f || closestHit.refractivity > 0.0f) {
@@ -134,7 +139,9 @@ Color Scene::trace(const Ray& ray, int depth) {
         reflectColor = trace(reflectRay, depth + 1);
     }
 
+    // ==========================
     // REFRACCIÓN
+    // ==========================
     Color refractColor(0, 0, 0);
 
     if (closestHit.refractivity > 0.0f) {
@@ -147,19 +154,78 @@ Color Scene::trace(const Ray& ray, int depth) {
         refractColor = trace(refractRay, depth + 1);
     }
 
+    // ==========================
     // COMBINACIÓN FINAL
+    // ==========================
     if (closestHit.refractivity > 0.0f) {
+
         float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
+        float kt = std::clamp(closestHit.refractivity, 0.0f, 1.0f);
+        float local = 1.0f - kt;
 
         finalColor =
+            finalColor * local +
             reflectColor * kr +
-            refractColor * (1.0f - kr);
+            refractColor * kt * (1.0f - kr);
     }
     else if (closestHit.reflectivity > 0.0f) {
+
+        float kr = std::clamp(closestHit.reflectivity, 0.0f, 1.0f);
+
         finalColor =
-            finalColor * (1.0f - closestHit.reflectivity) +
-            reflectColor * closestHit.reflectivity;
+            finalColor * (1.0f - kr) +
+            reflectColor * kr;
     }
 
     return finalColor;
+}
+
+Color Scene::traceReflectionMap(const Ray& ray) {
+    Intersection closestHit;
+    closestHit.t = 1e30f;
+
+    bool hitSomething = false;
+
+    for (auto obj : objects) {
+        Intersection tempHit;
+
+        if (obj->intersect(ray, tempHit)) {
+            if (tempHit.t > 0.001f && tempHit.t < closestHit.t) {
+                closestHit = tempHit;
+                hitSomething = true;
+            }
+        }
+    }
+
+    if (!hitSomething)
+        return Color(0, 0, 0);
+
+    float k = std::clamp(closestHit.reflectivity, 0.0f, 1.0f);
+
+    return Color(k, k, k);
+}
+
+Color Scene::traceTransmissionMap(const Ray& ray) {
+    Intersection closestHit;
+    closestHit.t = 1e30f;
+
+    bool hitSomething = false;
+
+    for (auto obj : objects) {
+        Intersection tempHit;
+
+        if (obj->intersect(ray, tempHit)) {
+            if (tempHit.t > 0.001f && tempHit.t < closestHit.t) {
+                closestHit = tempHit;
+                hitSomething = true;
+            }
+        }
+    }
+
+    if (!hitSomething)
+        return Color(0, 0, 0);
+
+    float k = std::clamp(closestHit.refractivity, 0.0f, 1.0f);
+
+    return Color(k, k, k);
 }

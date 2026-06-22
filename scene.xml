@@ -26,15 +26,22 @@
 		<!-- pared frontal -->
 
 		<sphere cx="-1.1" cy="-0.2" cz="-5.8" radius="0.6"
-				r="1" g="0" b="0"
-				reflection="0.05" transparency="0.95" refraction="1.5" />
+        r="0.9" g="0.97" b="1.0"
+        reflection="0.08" transparency="0.92" refraction="1.52" />
 		<sphere cx="1.2" cy="-0.3" cz="-6.0" radius="0.5"
         r="1" g="1" b="1"
         reflection="0.95" transparency="0.0" refraction="1.0" />
 		<!-- blanca espejo -->
 		<table alturaPata="1.0" alturaMesa="0.2" colorR="0.45" colorG="0.30" colorB="0.15" />
 
-		<pyramid cx="-0.8" cy="-0.8" cz="-8.2" size="1.2" r="0.2" g="0.2" b="1.0" />
+
+		<pyramid cx="-1"
+         cy="-0.8"
+         cz="-5.8"
+         size="0.65"
+         r="0.2"
+         g="0.2"
+         b="1.0" />
 		<!-- azul atrás -->
 		<pyramid cx="0.2" cy="-0.8" cz="-6.8" size="0.8" r="1.0" g="0.35" b="0.1" />
 		<!-- naranja centro -->

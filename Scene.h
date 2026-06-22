@@ -10,4 +10,6 @@ public:
     std::vector<Light> lights;
 
     Color trace(const Ray& ray, int depth);
+    Color traceReflectionMap(const Ray& ray);
+    Color traceTransmissionMap(const Ray& ray);
 };

@@ -82,6 +82,9 @@ int main() {
     int height = resElem->IntAttribute("height");
     Color* framebuffer = new Color[width * height];
 
+    Color* reflectionBuffer = new Color[width * height];
+    Color* transmissionBuffer = new Color[width * height];
+
     Scene scene;
 
     // 3. Cámara
@@ -92,80 +95,6 @@ int main() {
     Camera camera(Vec3(cx, cy, cz));
 
 
-
-
-    /*
-    // Piso
-    scene.objects.push_back(new Plane(
-        Vec3(0, -2, 0), Vec3(0, 1, 0),   // piso en y = -2
-        Color(1.0f, 1.0f, 1.0f)
-    ));
-
-    scene.objects.push_back(new Plane(
-        Vec3(0, 2, 0), Vec3(0, -1, 0),   // techo en y = 2
-        Color(1.0f, 1.0f, 1.0f)
-    ));
-    scene.objects.push_back(new Plane(
-        Vec3(-3, 0, 0), Vec3(1, 0, 0),   // pared izquierda (roja)
-        Color(0.8f, 0.2f, 0.2f)
-    ));
-
-    scene.objects.push_back(new Plane(
-        Vec3(3, 0, 0), Vec3(-1, 0, 0),   // pared derecha (verde)
-        Color(0.2f, 0.8f, 0.2f)
-    ));
-    scene.objects.push_back(new Plane(
-        Vec3(0, 0, -9), Vec3(0, 0, 1),  // pared del fondo
-        Color(1.0f, 1.0f, 1.0f)
-    ));
-    scene.objects.push_back(new Plane(
-        Vec3(0, 0, 2),      // pared frontal
-        Vec3(0, 0, -1),
-        Color(0.0f, 0.0f, 0.0f)
-    ));
-
-    Color colorMesa(0.45f, 0.30f, 0.15f);
-
-    float alturaPata = 1.0f;
-	float alturaMesa = 0.2f;
-
-    // Tabla: ancho y plano, apoyado sobre las patas
-    // y va de -1.3 a -1.0  (cerca del piso pero elevado)
-    scene.objects.push_back(new Box(
-        Vec3(-1.8f, -2.0f + alturaPata, -8.5f),
-        Vec3(1.8f, -2.0f + alturaPata + alturaMesa, -4.5f),
-        colorMesa
-    ));
-
-
-    // Pata delantera izquierda
-    scene.objects.push_back(new Box(
-        Vec3(-1.7f, -2.0f , -5.2f),
-        Vec3(-1.4f, -2.0f + alturaPata , -4.9f),
-        colorMesa
-    ));
-
-    // Pata delantera derecha
-    scene.objects.push_back(new Box(
-        Vec3(1.4f, -2.0f  , -5.2f),
-        Vec3(1.7f, -2.0f + alturaPata , -4.9f),
-        colorMesa
-    ));
-
-    // Pata trasera izquierda
-    scene.objects.push_back(new Box(
-        Vec3(-1.7f, -2.0f , -8.3f),
-        Vec3(-1.4f, -2.0f + alturaPata , -8.0f),
-        colorMesa
-    ));
-
-    // Pata trasera derecha
-    scene.objects.push_back(new Box(
-        Vec3(1.4f, -2.0f , -8.3f),
-        Vec3(1.7f, -2.0f + alturaPata, -8.0f),
-        colorMesa
-    ));
-    */
     // 5. Objetos
     XMLElement* objectsElem = root->FirstChildElement("objects");
 
@@ -207,41 +136,6 @@ int main() {
         ));
     }
 
-/*
-    // =====================
-    // OBJETOS SOBRE LA MESA
-    // =====================
-
-    // Pirámide azul atrás (grande)
-    scene.objects.push_back(new Pyramid(
-        Vec3(-0.8f, -0.8f, -8.2f),
-        1.2f,
-        Color(0.2f, 0.2f, 1.0f)
-    ));
-
-    // Vidrio adelante
-    scene.objects.push_back(new Sphere(
-        Vec3(-1.1f, -0.2f, -5.8f),
-        0.6f,
-        Color(1.0f, 0.0f, 0.0f),
-        0.05f, 0.95f, 1.5f
-    ));
-
-    // Pirámide naranja centro
-    scene.objects.push_back(new Pyramid(
-        Vec3(0.2f, -0.8f, -6.8f),
-        0.8f,
-        Color(1.0f, 0.35f, 0.1f)
-    ));
-
-    // Esfera espejo derecha
-    scene.objects.push_back(new Sphere(
-        Vec3(1.2f, -0.3f, -6.0f),
-        0.5f,
-        Color(1.0f, 1.0f, 1.0f),
-        0.95f, 0.0f, 1.0f
-    ));
-    */
         XMLElement* sphereElem = objectsElem->FirstChildElement("sphere");
         while (sphereElem) {
             float x = sphereElem->FloatAttribute("cx");
@@ -299,10 +193,6 @@ while(boxElem){
 }
 
 
-   // scene.lights.push_back(Light(Vec3(0.0f, 1.0f, -5.8f), 3.5f));   // principal
-   //scene.lights.push_back(Light(Vec3(-1.5f, 0.8f, -4.5f), 2.0f));  // relleno izquierda
-   //scene.lights.push_back(Light(Vec3(1.5f, 0.8f, -4.5f), 2.0f));   // relleno derecha
-   //scene.lights.push_back(Light(Vec3(0.0f, 1.0f, -8.7f), 0.4f)); 
 
 
     for (int y = 0; y < height; y++) {
@@ -312,7 +202,8 @@ while(boxElem){
             float ny = (1 - 2 * (y + 0.5f) / (float)height);
 
             Ray ray = camera.generateRay(nx, ny);
-           
+            reflectionBuffer[y * width + x] = scene.traceReflectionMap(ray);
+            transmissionBuffer[y * width + x] = scene.traceTransmissionMap(ray);
             Color color = scene.trace(ray, 0);
 
             framebuffer[y * width + x] = color;
@@ -320,11 +211,15 @@ while(boxElem){
     }
 
     //guardo las imagenes
-    saveBMP("C:\\Users\\juanp\\Desktop\\output.bmp", width, height, framebuffer);
+    saveBMP("C:\\Users\\matie\\Desktop\\output.bmp", width, height, framebuffer);
+    saveBMP("C:\\Users\\matie\\Desktop\\reflection_map.bmp", width, height, reflectionBuffer);
+    saveBMP("C:\\Users\\matie\\Desktop\\transmission_map.bmp", width, height, transmissionBuffer);
 
     std::cout << "Render terminado: output.bmp" << std::endl;
 
     delete[] framebuffer;
+    delete[] reflectionBuffer;
+    delete[] transmissionBuffer;
 
     return 0;
 }

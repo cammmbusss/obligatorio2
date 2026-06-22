@@ -284,19 +284,19 @@ int main() {
         lightsElem = lightsElem->NextSiblingElement("light");
     }
     XMLElement* boxElem = objectsElem->FirstChildElement("box");
-    while (boxElem) {
-        float minx = boxElem->FloatAttribute("minx");
-        float miny = boxElem->FloatAttribute("miny");
-        float minz = boxElem->FloatAttribute("minz");
-        float maxx = boxElem->FloatAttribute("maxx");
-        float maxy = boxElem->FloatAttribute("maxy");
-        float maxz = boxElem->FloatAttribute("maxz");
-        float r = boxElem->FloatAttribute("r");
-        float g = boxElem->FloatAttribute("g");
-        float b = boxElem->FloatAttribute("b");
-        scene.objects.push_back(new Box(Vec3(minx, miny, minz), Vec3(maxx, maxy, maxz), Color(r, g, b)));
-        boxElem = boxElem->NextSiblingElement("box");
-    }
+while(boxElem){
+ float minx=boxElem->FloatAttribute("minx");
+ float miny=boxElem->FloatAttribute("miny");
+ float minz=boxElem->FloatAttribute("minz");
+ float maxx=boxElem->FloatAttribute("maxx");
+ float maxy=boxElem->FloatAttribute("maxy");
+ float maxz=boxElem->FloatAttribute("maxz");
+ float r=boxElem->FloatAttribute("r");
+ float g=boxElem->FloatAttribute("g");
+ float b=boxElem->FloatAttribute("b");
+ scene.objects.push_back(new Box(Vec3(minx,miny,minz), Vec3(maxx,maxy,maxz), Color(r,g,b)));
+ boxElem=boxElem->NextSiblingElement("box");
+}
 
 
    // scene.lights.push_back(Light(Vec3(0.0f, 1.0f, -5.8f), 3.5f));   // principal

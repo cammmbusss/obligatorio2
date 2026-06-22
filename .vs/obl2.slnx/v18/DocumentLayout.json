@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\juanp\\source\\repos\\obligatorio2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAAADgBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAAAEkBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-06-17T22:50:18.921Z",
               "IsPinned": true,
@@ -106,7 +106,7 @@
               "RelativeDocumentMoniker": "scene.xml",
               "ToolTip": "C:\\Users\\juanp\\source\\repos\\obligatorio2\\scene.xml",
               "RelativeToolTip": "scene.xml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2026-06-21T21:23:28.985Z",
               "EditorCaption": ""
@@ -121,8 +121,7 @@
               "RelativeToolTip": "tinyxml2.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-21T21:12:16.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T21:12:16.265Z"
             },
             {
               "$type": "Document",
@@ -134,8 +133,7 @@
               "RelativeToolTip": "tinyxml2.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-21T21:12:09.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T21:12:09.696Z"
             },
             {
               "$type": "Document",

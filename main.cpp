@@ -112,29 +112,6 @@ int main() {
         scene.objects.push_back(new Plane(Vec3(px, py, pz), Vec3(nx, ny, nz), Color(r, g, b)));
         planeElem = planeElem->NextSiblingElement("plane");
     }
-    // Mesa
-    XMLElement* tableElem = objectsElem->FirstChildElement("table");
-    if (tableElem) {
-        float alturaPata = tableElem->FloatAttribute("alturaPata");
-        float alturaMesa = tableElem->FloatAttribute("alturaMesa");
-        float r = tableElem->FloatAttribute("colorR");
-        float g = tableElem->FloatAttribute("colorG");
-        float b = tableElem->FloatAttribute("colorB");
-        Color colorMesa(r, g, b);
-
-        // tablero
-        scene.objects.push_back(new Box(
-            Vec3(-1.8f, -2.0f + alturaPata, -8.5f),
-            Vec3(1.8f, -2.0f + alturaPata + alturaMesa, -4.5f),
-            colorMesa
-        ));
-        // patas (ejemplo, podés agregar todas)
-        scene.objects.push_back(new Box(
-            Vec3(-1.7f, -2.0f, -5.2f),
-            Vec3(-1.4f, -2.0f + alturaPata, -4.9f),
-            colorMesa
-        ));
-    }
 
         XMLElement* sphereElem = objectsElem->FirstChildElement("sphere");
         while (sphereElem) {

@@ -1,56 +1,46 @@
 <scene>
 	<resolution width="800" height="600" />
+
 	<camera>
 		<position x="0" y="0" z="-2" />
 	</camera>
+
 	<lights>
-		<light x="0" y="1" z="-5.8" intensity="3.5" />
-		<light x="-1.5" y="0.8" z="-4.5" intensity="2.0" />
-		<light x="1.5" y="0.8" z="-4.5" intensity="2.0" />
-		<light x="0.0" y="1.0" z="-8.7" intensity="0.4" />
+		<!-- Principal: atrás/arriba, proyecta sombra hacia adelante sobre la mesa -->
+		<light x="0.0" y="1.2" z="-6.0" intensity="3" />
 
+		<!-- Relleno suave, no mata la sombra -->
+		<light x="0.8" y="0.9" z="-4.2" intensity="0.45" />
 	</lights>
+
 	<objects>
-		<!-- techo y piso  -->
+		<plane px="0" py="-1.6" pz="0" nx="0" ny="1" nz="0" r="0.88" g="0.88" b="0.88" />
+		<plane px="0" py="1.6" pz="0" nx="0" ny="-1" nz="0" r="0.95" g="0.95" b="0.95" />
 
-		<plane px="0" py="-2" pz="0" nx="0" ny="1" nz="0" r="1" g="1" b="1" />
-		<plane px="0" py="2" pz="0" nx="0" ny="-1" nz="0" r="1" g="1" b="1" />
+		<plane px="-2.2" py="0" pz="0" nx="1" ny="0" nz="0" r="0.8" g="0.2" b="0.2" />
+		<plane px="2.2" py="0" pz="0" nx="-1" ny="0" nz="0" r="0.2" g="0.8" b="0.2" />
+		<plane px="0" py="0" pz="-7.5" nx="0" ny="0" nz="1" r="0.95" g="0.95" b="0.95" />
+		<!-- detrás de la cámara -->
+		<plane px="0" py="0" pz="2" nx="0" ny="0" nz="-1"
+			   r="0" g="0" b="0" />
+		<box minx="-1.8" miny="-1.6" minz="-7.1"
+		maxx="1.8" maxy="-0.75" maxz="-4.4"
+		r="0.95" g="0.95" b="0.92" />
 
-		<plane px="-3" py="0" pz="0" nx="1" ny="0" nz="0" r="0.8" g="0.2" b="0.2" />
-		<!-- pared izquierda -->
-		<plane px="3" py="0" pz="0" nx="-1" ny="0" nz="0" r="0.2" g="0.8" b="0.2" />
-		<!-- pared derecha -->
-		<plane px="0" py="0" pz="-9" nx="0" ny="0" nz="1" r="1" g="1" b="1" />
-		<!-- pared fondo -->
-		<plane px="0" py="0" pz="2" nx="0" ny="0" nz="-1" r="0" g="0" b="0" />
-		<!-- pared frontal -->
+		<sphere cx="-0.35" cy="-0.20" cz="-6.10" radius="0.72"
+                r="0.95" g="0.65" b="0.70"
+                reflection="0.22"
+                transparency="0.88"
+                refraction="1.52" />
 
-		<sphere cx="-1.1" cy="-0.2" cz="-5.8" radius="0.6"
-        r="0.9" g="0.97" b="1.0"
-        reflection="0.08" transparency="0.92" refraction="1.52" />
-		<sphere cx="1.2" cy="-0.3" cz="-6.0" radius="0.5"
-        r="1" g="1" b="1"
-        reflection="0.95" transparency="0.0" refraction="1.0" />
-		<!-- blanca espejo -->
-		<table alturaPata="1.0" alturaMesa="0.2" colorR="0.45" colorG="0.30" colorB="0.15" />
+		<pyramid cx="-0.35" cy="-0.75" cz="-6.10"
+                 size="0.75"
+                 r="1.0" g="0.35" b="0.1" />
 
-
-		<pyramid cx="-1"
-         cy="-0.8"
-         cz="-5.8"
-         size="0.65"
-         r="0.2"
-         g="0.2"
-         b="1.0" />
-		<!-- azul atrás -->
-		<pyramid cx="0.2" cy="-0.8" cz="-6.8" size="0.8" r="1.0" g="0.35" b="0.1" />
-		<!-- naranja centro -->
-
-		<box minx="-1.7" miny="-2.0" minz="-5.2" maxx="-1.4" maxy="-1.0" maxz="-4.9" r="0.45" g="0.30" b="0.15" />
-		<box minx="-1.7" miny="-2.0" minz="-5.2" maxx="-1.4" maxy="-1.0" maxz="-4.9" r="0.45" g="0.30" b="0.15" />
-		<box minx="1.4"  miny="-2.0" minz="-5.2" maxx="1.7"  maxy="-1.0" maxz="-4.9" r="0.45" g="0.30" b="0.15" />
-		<box minx="-1.7" miny="-2.0" minz="-8.3" maxx="-1.4" maxy="-1.0" maxz="-8.0" r="0.45" g="0.30" b="0.15" />
-		<box minx="1.4"  miny="-2.0" minz="-8.3" maxx="1.7"  maxy="-1.0" maxz="-8.0" r="0.45" g="0.30" b="0.15" />
-
+		<sphere cx="1.05" cy="-0.30" cz="-6.05" radius="0.45"
+                r="1" g="1" b="1"
+                reflection="0.95"
+                transparency="0.0"
+                refraction="1.0" />
 	</objects>
 </scene>

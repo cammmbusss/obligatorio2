@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+
 Vec3 refract(const Vec3& I, const Vec3& N, float ior) {
     float cosi = std::clamp(I.dot(N), -1.0f, 1.0f);
     float etai = 1.0f;
@@ -22,9 +23,8 @@ Vec3 refract(const Vec3& I, const Vec3& N, float ior) {
     if (k < 0) {
         return Vec3(0, 0, 0);
     }
-    else {
-        return I * eta + n * (eta * cosi - sqrt(k));
-    }
+
+    return I * eta + n * (eta * cosi - sqrt(k));
 }
 
 float fresnel(const Vec3& I, const Vec3& N, float ior) {
@@ -32,33 +32,35 @@ float fresnel(const Vec3& I, const Vec3& N, float ior) {
     float etai = 1.0f;
     float etat = ior;
 
-    if (cosi > 0) std::swap(etai, etat);
-
-    float sint = etai / etat * sqrtf(std::max(0.f, 1 - cosi * cosi));
-
-    if (sint >= 1) {
-        return 1.0f; // reflexión total interna
+    if (cosi > 0) {
+        std::swap(etai, etat);
     }
-    else {
-        float cost = sqrtf(std::max(0.f, 1 - sint * sint));
-        cosi = fabs(cosi);
 
-        float Rs = ((etat * cosi) - (etai * cost)) /
-            ((etat * cosi) + (etai * cost));
+    float sint = etai / etat * sqrtf(std::max(0.0f, 1 - cosi * cosi));
 
-        float Rp = ((etai * cosi) - (etat * cost)) /
-            ((etai * cosi) + (etat * cost));
-
-        return (Rs * Rs + Rp * Rp) / 2.0f;
+    if (sint >= 1.0f) {
+        return 1.0f;
     }
+
+    float cost = sqrtf(std::max(0.0f, 1 - sint * sint));
+    cosi = fabs(cosi);
+
+    float Rs = ((etat * cosi) - (etai * cost)) /
+        ((etat * cosi) + (etai * cost));
+
+    float Rp = ((etai * cosi) - (etat * cost)) /
+        ((etai * cosi) + (etat * cost));
+
+    return (Rs * Rs + Rp * Rp) / 2.0f;
 }
 
 Color Scene::trace(const Ray& ray, int depth) {
 
     Color background(0.85f, 0.85f, 0.85f);
 
-    if (depth > 10)
+    if (depth > 10) {
         return background;
+    }
 
     Intersection closestHit;
     closestHit.t = 1e30f;
@@ -76,14 +78,12 @@ Color Scene::trace(const Ray& ray, int depth) {
         }
     }
 
-    if (!hitSomething)
+    if (!hitSomething) {
         return background;
+    }
 
     Color finalColor(0, 0, 0);
 
-    // ==========================
-    // ILUMINACIÓN DIFUSA + SHADOW RAYS
-    // ==========================
     for (auto& light : lights) {
 
         Vec3 lightVec = light.position - closestHit.point;
@@ -93,38 +93,71 @@ Color Scene::trace(const Ray& ray, int depth) {
         Vec3 lightDir = lightVec.normalize();
 
         Vec3 shadowOrigin = closestHit.point + closestHit.normal * 0.001f;
-        Ray shadowRay(shadowOrigin, lightDir);
 
-        bool inShadow = false;
+        Color shadowTint(1.0f, 1.0f, 1.0f);
+        bool blocked = false;
 
-        for (auto obj : objects) {
-            Intersection shadowHit;
+        Vec3 currentOrigin = shadowOrigin;
+        float remainingDistance = lightDistance;
 
-            if (obj->intersect(shadowRay, shadowHit)) {
-                if (shadowHit.t > 0.001f &&
-                    shadowHit.t < lightDistance &&
-                    shadowHit.refractivity < 0.5f) {
+        for (int bounce = 0; bounce < 8; bounce++) {
 
-                    inShadow = true;
-                    break;
+            Ray currentShadowRay(currentOrigin, lightDir);
+
+            Intersection closestShadowHit;
+            closestShadowHit.t = 1e30f;
+
+            bool shadowHitSomething = false;
+
+            for (auto obj : objects) {
+                Intersection tempShadowHit;
+
+                if (obj->intersect(currentShadowRay, tempShadowHit)) {
+                    if (tempShadowHit.t > 0.001f &&
+                        tempShadowHit.t < remainingDistance &&
+                        tempShadowHit.t < closestShadowHit.t) {
+
+                        closestShadowHit = tempShadowHit;
+                        shadowHitSomething = true;
+                    }
                 }
+            }
+
+            if (!shadowHitSomething) {
+                break;
+            }
+
+            if (closestShadowHit.refractivity > 0.0f) {
+
+                float transmission = 0.5f;
+
+                Color glassShadowTint(
+                    transmission + (1.0f - transmission) * closestShadowHit.color.r,
+                    transmission + (1.0f - transmission) * closestShadowHit.color.g,
+                    transmission + (1.0f - transmission) * closestShadowHit.color.b
+                );
+
+                shadowTint = shadowTint * glassShadowTint;
+
+                currentOrigin = closestShadowHit.point + lightDir * 0.01f;
+                remainingDistance -= closestShadowHit.t;
+            }
+            else {
+                blocked = true;
+                break;
             }
         }
 
-        if (!inShadow) {
+        if (!blocked) {
             float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
             float attenuation = light.intensity / (1.0f + dist2);
 
-            finalColor = finalColor + closestHit.color * (attenuation * diff);
+            finalColor = finalColor + closestHit.color * shadowTint * (attenuation * diff);
         }
     }
 
-    // Ambiente suave
     finalColor = finalColor + closestHit.color * 0.18f;
 
-    // ==========================
-    // REFLEXIÓN
-    // ==========================
     Color reflectColor(0, 0, 0);
 
     if (closestHit.reflectivity > 0.0f || closestHit.refractivity > 0.0f) {
@@ -139,34 +172,40 @@ Color Scene::trace(const Ray& ray, int depth) {
         reflectColor = trace(reflectRay, depth + 1);
     }
 
-    // ==========================
-    // REFRACCIÓN
-    // ==========================
     Color refractColor(0, 0, 0);
 
     if (closestHit.refractivity > 0.0f) {
         Vec3 refractDir = refract(ray.direction, closestHit.normal, closestHit.ior);
         refractDir = refractDir.normalize();
 
-        Vec3 refractOrigin = closestHit.point + refractDir * 0.01f;
+        Vec3 refractOrigin = closestHit.point + refractDir * 0.001f;
         Ray refractRay(refractOrigin, refractDir);
 
         refractColor = trace(refractRay, depth + 1);
     }
 
-    // ==========================
-    // COMBINACIÓN FINAL
-    // ==========================
     if (closestHit.refractivity > 0.0f) {
 
         float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
         float kt = std::clamp(closestHit.refractivity, 0.0f, 1.0f);
         float local = 1.0f - kt;
 
+        Color glassTint(
+            0.85f + 0.15f * closestHit.color.r,
+            0.85f + 0.15f * closestHit.color.g,
+            0.85f + 0.15f * closestHit.color.b
+        );
+
+        float reflectionBoost = std::clamp(
+            kr + closestHit.reflectivity,
+            0.0f,
+            1.0f
+        );
+
         finalColor =
             finalColor * local +
-            reflectColor * kr +
-            refractColor * kt * (1.0f - kr);
+            reflectColor * reflectionBoost +
+            (refractColor * glassTint) * kt * (1.0f - reflectionBoost);
     }
     else if (closestHit.reflectivity > 0.0f) {
 
@@ -197,8 +236,9 @@ Color Scene::traceReflectionMap(const Ray& ray) {
         }
     }
 
-    if (!hitSomething)
+    if (!hitSomething) {
         return Color(0, 0, 0);
+    }
 
     float k = std::clamp(closestHit.reflectivity, 0.0f, 1.0f);
 
@@ -222,8 +262,9 @@ Color Scene::traceTransmissionMap(const Ray& ray) {
         }
     }
 
-    if (!hitSomething)
+    if (!hitSomething) {
         return Color(0, 0, 0);
+    }
 
     float k = std::clamp(closestHit.refractivity, 0.0f, 1.0f);
 

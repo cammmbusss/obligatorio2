@@ -11,3 +11,7 @@ Color Color::operator+(const Color& c) const {
 Color Color::operator*(float k) const {
     return Color(r * k, g * k, b * k);
 }
+
+Color Color::operator*(const Color& c) const {
+    return Color(r * c.r, g * c.g, b * c.b);
+}

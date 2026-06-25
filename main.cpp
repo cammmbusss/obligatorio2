@@ -185,9 +185,9 @@ while(boxElem){
     }
 
     //guardo las imagenes
-    saveBMP("C:\\Users\\Usuario\\Desktop\\output.bmp", width, height, framebuffer);
-    saveBMP("C:\\Users\\Usuario\\Desktop\\reflection_map.bmp", width, height, reflectionBuffer);
-    saveBMP("C:\\Users\\Usuario\\Desktop\\transmission_map.bmp", width, height, transmissionBuffer);
+   // saveBMP("C:\\Users\\Usuario\\Desktop\\output.bmp", width, height, framebuffer);
+    saveBMP("reflection_map.bmp", width, height, reflectionBuffer);
+    saveBMP("transmission_map.bmp", width, height, transmissionBuffer);
     saveBMP("./output.bmp", width, height, framebuffer);
 
     std::cout << "Render terminado: output.bmp" << std::endl;

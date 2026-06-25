@@ -29,7 +29,7 @@
 
 		<sphere cx="-0.35" cy="-0.20" cz="-6.10" radius="0.72"
                 r="0.95" g="0.65" b="0.70"
-                reflection="0.22"
+                reflection="0"
                 transparency="0.88"
                 refraction="1.52" />
 
@@ -39,8 +39,8 @@
 
 		<sphere cx="1.05" cy="-0.30" cz="-6.05" radius="0.45"
                 r="1" g="1" b="1"
-                reflection="0.95"
+                reflection="0"
                 transparency="0.0"
-                refraction="1.0" />
+                refraction="0" />
 	</objects>
 </scene>

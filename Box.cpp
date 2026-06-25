@@ -16,27 +16,25 @@ Box::Box(Vec3 minP, Vec3 maxP, Color color,
         faces.push_back(new Triangle(a, b, c, color, refl, refr, iorVal));
         };
 
-    // Superior (+Y) — normal apunta hacia arriba
     add(v010, v011, v111);
     add(v010, v111, v110);
 
-    // Inferior (-Y) — normal apunta hacia abajo
     add(v000, v100, v101);
     add(v000, v101, v001);
 
-    // Frontal (+Z) — normal apunta hacia la cámara
+   
     add(v001, v101, v111);
     add(v001, v111, v011);
 
-    // Trasera (-Z) — normal apunta hacia el fondo
+   
     add(v100, v000, v010);
     add(v100, v010, v110);
 
-    // Derecha (+X)
+  
     add(v100, v111, v101);
     add(v100, v110, v111);
 
-    // Izquierda (-X) — normal apunta a la izquierda
+ 
     add(v000, v001, v011);
     add(v000, v011, v010);
 }

@@ -71,12 +71,11 @@ void saveBMP(const char* filename, int width, int height, Color* data) {
 int main() {
     using namespace tinyxml2;
 
-    // 1. Cargar XML
+   
     XMLDocument doc;
     doc.LoadFile("scene.xml");
     XMLElement* root = doc.FirstChildElement("scene");
 
-    // 2. Resolución
     XMLElement* resElem = root->FirstChildElement("resolution");
     int width = resElem->IntAttribute("width");
     int height = resElem->IntAttribute("height");
@@ -87,7 +86,6 @@ int main() {
 
     Scene scene;
 
-    // 3. Cámara
     XMLElement* camElem = root->FirstChildElement("camera")->FirstChildElement("position");
     float cx = camElem->FloatAttribute("x");
     float cy = camElem->FloatAttribute("y");
@@ -95,7 +93,6 @@ int main() {
     Camera camera(Vec3(cx, cy, cz));
 
 
-    // 5. Objetos
     XMLElement* objectsElem = root->FirstChildElement("objects");
 
     XMLElement* planeElem = objectsElem->FirstChildElement("plane");
@@ -122,13 +119,13 @@ int main() {
         float b = tableElem->FloatAttribute("colorB");
         Color colorMesa(r, g, b);
 
-        // tablero
+        
         scene.objects.push_back(new Box(
             Vec3(-1.8f, -2.0f + alturaPata, -8.5f),
             Vec3(1.8f, -2.0f + alturaPata + alturaMesa, -4.5f),
             colorMesa
         ));
-        // patas (ejemplo, podés agregar todas)
+      
         scene.objects.push_back(new Box(
             Vec3(-1.7f, -2.0f, -5.2f),
             Vec3(-1.4f, -2.0f + alturaPata, -4.9f),

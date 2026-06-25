@@ -5,15 +5,10 @@ class Vec3 {
 public:
     float x, y, z;
 
-    // ==========================
-    // CONSTRUCTORES
-    // ==========================
     Vec3() : x(0), y(0), z(0) {}
     Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
 
-    // ==========================
-    // OPERADORES
-    // ==========================
+
     Vec3 operator+(const Vec3& v) const {
         return Vec3(x + v.x, y + v.y, z + v.z);
     }
@@ -30,16 +25,10 @@ public:
         return Vec3(x / s, y / s, z / s);
     }
 
-    // ==========================
-    // DOT PRODUCT
-    // ==========================
     float dot(const Vec3& v) const {
         return x * v.x + y * v.y + z * v.z;
     }
 
-    // ==========================
-    // CROSS PRODUCT 🔥
-    // ==========================
     Vec3 cross(const Vec3& v) const {
         return Vec3(
             y * v.z - z * v.y,
@@ -48,16 +37,10 @@ public:
         );
     }
 
-    // ==========================
-    // MAGNITUD
-    // ==========================
     float length() const {
         return std::sqrt(x * x + y * y + z * z);
     }
 
-    // ==========================
-    // NORMALIZAR
-    // ==========================
     Vec3 normalize() const {
         float len = length();
         if (len == 0.0f) return Vec3(0, 0, 0);

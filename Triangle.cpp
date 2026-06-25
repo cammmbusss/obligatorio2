@@ -1,4 +1,4 @@
-// Implementación de Triangle
+
 #include "Triangle.h"
 #include <cmath>
 

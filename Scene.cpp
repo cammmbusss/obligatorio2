@@ -81,9 +81,6 @@ Color Scene::trace(const Ray& ray, int depth) {
 
     Color finalColor(0, 0, 0);
 
-    // ==========================
-    // ILUMINACIÓN DIFUSA + SHADOW RAYS
-    // ==========================
     for (auto& light : lights) {
 
         Vec3 lightVec = light.position - closestHit.point;
@@ -122,9 +119,7 @@ Color Scene::trace(const Ray& ray, int depth) {
     // Ambiente suave
     finalColor = finalColor + closestHit.color * 0.18f;
 
-    // ==========================
-    // REFLEXIÓN
-    // ==========================
+   
     Color reflectColor(0, 0, 0);
 
     if (closestHit.reflectivity > 0.0f || closestHit.refractivity > 0.0f) {
@@ -139,9 +134,7 @@ Color Scene::trace(const Ray& ray, int depth) {
         reflectColor = trace(reflectRay, depth + 1);
     }
 
-    // ==========================
-    // REFRACCIÓN
-    // ==========================
+   
     Color refractColor(0, 0, 0);
 
     if (closestHit.refractivity > 0.0f) {
@@ -154,9 +147,6 @@ Color Scene::trace(const Ray& ray, int depth) {
         refractColor = trace(refractRay, depth + 1);
     }
 
-    // ==========================
-    // COMBINACIÓN FINAL
-    // ==========================
     if (closestHit.refractivity > 0.0f) {
 
         float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);

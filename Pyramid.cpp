@@ -9,16 +9,13 @@ Pyramid::Pyramid(Vec3 center, float size, Color color) {
     Vec3 p3 = center + Vec3(-h, 0, h);
     Vec3 top = center + Vec3(0, h, 0);
 
-    // ✅ CORRECCIÓN: base dividida en dos triángulos con winding correcto
-    // La base apunta hacia abajo (normal = 0,-1,0), orden CW visto desde arriba
-    faces.emplace_back(p0, p2, p1, color, 0.2f, 0.0f, 1.0f);  // triángulo 1 base
-    faces.emplace_back(p0, p3, p2, color, 0.2f, 0.0f, 1.0f);  // triángulo 2 base
+    faces.emplace_back(p0, p2, p1, color, 0.2f, 0.0f, 1.0f);  
+    faces.emplace_back(p0, p3, p2, color, 0.2f, 0.0f, 1.0f);  
 
-    // ✅ CORRECCIÓN: caras laterales con winding CCW visto desde afuera
-    faces.emplace_back(p1, p0, top, color, 0.2f, 0.0f, 1.0f);  // cara frontal (z negativo)
-    faces.emplace_back(p2, p1, top, color, 0.2f, 0.0f, 1.0f);  // cara derecha
-    faces.emplace_back(p3, p2, top, color, 0.2f, 0.0f, 1.0f);  // cara trasera
-    faces.emplace_back(p0, p3, top, color, 0.2f, 0.0f, 1.0f);  // cara izquierda
+    faces.emplace_back(p1, p0, top, color, 0.2f, 0.0f, 1.0f);  
+    faces.emplace_back(p2, p1, top, color, 0.2f, 0.0f, 1.0f);  
+    faces.emplace_back(p3, p2, top, color, 0.2f, 0.0f, 1.0f);  
+    faces.emplace_back(p0, p3, top, color, 0.2f, 0.0f, 1.0f);  
 
     reflectivity = 0.2f;
     refractivity = 0.0f;

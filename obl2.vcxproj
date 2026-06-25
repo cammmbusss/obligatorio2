@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="Box.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="cilindro.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Intersection.h" />
     <ClInclude Include="Light.h" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="cilindro.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />

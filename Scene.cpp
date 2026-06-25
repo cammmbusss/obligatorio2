@@ -149,10 +149,33 @@ Color Scene::trace(const Ray& ray, int depth) {
         }
 
         if (!blocked) {
+
             float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
             float attenuation = light.intensity / (1.0f + dist2);
 
-            finalColor = finalColor + closestHit.color * shadowTint * (attenuation * diff);
+            Color diffuse =
+                closestHit.color *
+                shadowTint *
+                (attenuation * diff);
+
+            Vec3 viewDir = (ray.direction * -1.0f).normalize();
+
+            Vec3 reflectLightDir =
+                (closestHit.normal *
+                    (2.0f * closestHit.normal.dot(lightDir))
+                    - lightDir).normalize();
+
+            float spec = pow(
+                std::max(0.0f, viewDir.dot(reflectLightDir)),
+                64.0f
+            );
+
+            Color specular =
+                Color(1.0f, 1.0f, 1.0f) *
+                shadowTint *
+                (attenuation * spec * 0.6f);
+
+            finalColor = finalColor + diffuse + specular;
         }
     }
 
@@ -160,7 +183,7 @@ Color Scene::trace(const Ray& ray, int depth) {
 
     Color reflectColor(0, 0, 0);
 
-    if (closestHit.reflectivity > 0.0f || closestHit.refractivity > 0.0f) {
+    if (closestHit.reflectivity > 0.0f) {
         Vec3 reflectDir =
             ray.direction - closestHit.normal * 2.0f * ray.direction.dot(closestHit.normal);
 
@@ -186,7 +209,12 @@ Color Scene::trace(const Ray& ray, int depth) {
 
     if (closestHit.refractivity > 0.0f) {
 
-        float kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
+        float kr = 0.0f;
+
+        if (closestHit.reflectivity > 0.0f) {
+            kr = fresnel(ray.direction, closestHit.normal, closestHit.ior);
+        }
+
         float kt = std::clamp(closestHit.refractivity, 0.0f, 1.0f);
         float local = 1.0f - kt;
 

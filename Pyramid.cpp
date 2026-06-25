@@ -19,7 +19,7 @@ Pyramid::Pyramid(Vec3 center, float size, Color color) {
     faces.emplace_back(p3, p2, top, color, 0.2f, 0.0f, 1.0f);
     faces.emplace_back(p0, p3, top, color, 0.2f, 0.0f, 1.0f); 
 
-    reflectivity = 0.2f;
+    reflectivity = 0.0f;
     refractivity = 0.0f;
     ior = 1.0f;
 

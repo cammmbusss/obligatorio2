@@ -1,94 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\",
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\scene.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scene.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\tinyxml2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:tinyxml2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Plane.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Triangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Triangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Ray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Ray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Pyramid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Pyramid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Intersection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Plane.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Pyramid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BCBE6AB-A3A1-4E30-88EA-2A6A946335FE}|obl2.vcxproj|solutionrelative:Pyramid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,29 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAAIgAAAA0AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Pyramid.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Pyramid.cpp",
+              "RelativeDocumentMoniker": "Pyramid.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Pyramid.cpp",
+              "RelativeToolTip": "Pyramid.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-17T22:50:18.921Z",
-              "IsPinned": true,
+              "WhenOpened": "2026-06-25T19:37:13.049Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Bookmark",
@@ -148,253 +63,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "scene.xml",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\scene.xml",
-              "RelativeDocumentMoniker": "scene.xml",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\scene.xml",
-              "RelativeToolTip": "scene.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-06-21T21:23:28.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Scene.cpp",
-              "RelativeDocumentMoniker": "Scene.cpp",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Scene.cpp",
-              "RelativeToolTip": "Scene.cpp",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAkwM0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-19T02:07:38.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Plane.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Plane.h",
-              "RelativeDocumentMoniker": "Plane.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Plane.h",
-              "RelativeToolTip": "Plane.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T22:34:52.367Z"
+              "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Color.cpp",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Color.cpp",
-              "RelativeDocumentMoniker": "Color.cpp",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Color.cpp",
-              "RelativeToolTip": "Color.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-24T23:30:03.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Color.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Color.h",
-              "RelativeDocumentMoniker": "Color.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Color.h",
-              "RelativeToolTip": "Color.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:12.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Sphere.cpp",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Sphere.cpp",
-              "RelativeDocumentMoniker": "Sphere.cpp",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Sphere.cpp",
-              "RelativeToolTip": "Sphere.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-22T22:45:02.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "tinyxml2.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\tinyxml2.h",
-              "RelativeDocumentMoniker": "tinyxml2.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\tinyxml2.h",
-              "RelativeToolTip": "tinyxml2.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-21T21:12:16.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Sphere.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Sphere.h",
-              "RelativeDocumentMoniker": "Sphere.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Sphere.h",
-              "RelativeToolTip": "Sphere.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:35.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Vec3.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Vec3.h",
-              "RelativeDocumentMoniker": "Vec3.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Vec3.h",
-              "RelativeToolTip": "Vec3.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:51.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Renderer.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Renderer.h",
-              "RelativeDocumentMoniker": "Renderer.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Renderer.h",
-              "RelativeToolTip": "Renderer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:30.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Ray.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Ray.h",
-              "RelativeDocumentMoniker": "Ray.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Ray.h",
-              "RelativeToolTip": "Ray.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:28.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Object.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Object.h",
-              "RelativeDocumentMoniker": "Object.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Object.h",
-              "RelativeToolTip": "Object.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T22:34:55.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Light.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Light.h",
-              "RelativeDocumentMoniker": "Light.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Light.h",
-              "RelativeToolTip": "Light.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:18.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Intersection.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Intersection.h",
-              "RelativeDocumentMoniker": "Intersection.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Intersection.h",
-              "RelativeToolTip": "Intersection.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:16.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Triangle.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Triangle.h",
-              "RelativeDocumentMoniker": "Triangle.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Triangle.h",
-              "RelativeToolTip": "Triangle.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T22:32:50.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Camera.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Camera.h",
-              "RelativeDocumentMoniker": "Camera.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Camera.h",
-              "RelativeToolTip": "Camera.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-24T22:48:07.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Box.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Box.h",
-              "RelativeDocumentMoniker": "Box.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Box.h",
-              "RelativeToolTip": "Box.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T22:34:57.911Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Scene.h",
-              "RelativeDocumentMoniker": "Scene.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Scene.h",
-              "RelativeToolTip": "Scene.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T22:22:47.64Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Box.cpp",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Box.cpp",
-              "RelativeDocumentMoniker": "Box.cpp",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Box.cpp",
-              "RelativeToolTip": "Box.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-24T22:35:03.003Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Pyramid.h",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Pyramid.h",
-              "RelativeDocumentMoniker": "Pyramid.h",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Pyramid.h",
-              "RelativeToolTip": "Pyramid.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T22:33:06.322Z"
             },
             {
               "$type": "Bookmark",
@@ -405,16 +78,34 @@
               "Name": "ST:11:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Plane.cpp",
-              "DocumentMoniker": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Plane.cpp",
-              "RelativeDocumentMoniker": "Plane.cpp",
-              "ToolTip": "C:\\Users\\matie\\Documents\\GitHub\\obligatorio2\\Plane.cpp",
-              "RelativeToolTip": "Plane.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Scene.cpp",
+              "RelativeDocumentMoniker": "Scene.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Scene.cpp",
+              "RelativeToolTip": "Scene.cpp",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAkwM0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-19T02:20:44.252Z"
+              "WhenOpened": "2026-06-19T02:07:38.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sphere.cpp",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Sphere.cpp",
+              "RelativeDocumentMoniker": "Sphere.cpp",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\compgraf2\\obligatorio2\\Sphere.cpp",
+              "RelativeToolTip": "Sphere.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-22T22:45:02.293Z",
+              "EditorCaption": ""
             }
           ]
         }

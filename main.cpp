@@ -71,12 +71,12 @@ void saveBMP(const char* filename, int width, int height, Color* data) {
 int main() {
     using namespace tinyxml2;
 
-    // 1. Cargar XML
+
     XMLDocument doc;
     doc.LoadFile("scene.xml");
     XMLElement* root = doc.FirstChildElement("scene");
 
-    // 2. Resolución
+
     XMLElement* resElem = root->FirstChildElement("resolution");
     int width = resElem->IntAttribute("width");
     int height = resElem->IntAttribute("height");
@@ -87,7 +87,6 @@ int main() {
 
     Scene scene;
 
-    // 3. Cámara
     XMLElement* camElem = root->FirstChildElement("camera")->FirstChildElement("position");
     float cx = camElem->FloatAttribute("x");
     float cy = camElem->FloatAttribute("y");
@@ -95,7 +94,6 @@ int main() {
     Camera camera(Vec3(cx, cy, cz));
 
 
-    // 5. Objetos
     XMLElement* objectsElem = root->FirstChildElement("objects");
 
     XMLElement* planeElem = objectsElem->FirstChildElement("plane");
@@ -143,8 +141,7 @@ int main() {
             pyrElem = pyrElem->NextSiblingElement("pyramid");
         }
 
-    //LUCES
-    // 4. Luces
+  
     XMLElement* lightsElem = root->FirstChildElement("lights")->FirstChildElement("light");
     while (lightsElem) {
         float lx = lightsElem->FloatAttribute("x");
@@ -188,9 +185,10 @@ while(boxElem){
     }
 
     //guardo las imagenes
-    saveBMP("C:\\Users\\matie\\Desktop\\output.bmp", width, height, framebuffer);
-    saveBMP("C:\\Users\\matie\\Desktop\\reflection_map.bmp", width, height, reflectionBuffer);
-    saveBMP("C:\\Users\\matie\\Desktop\\transmission_map.bmp", width, height, transmissionBuffer);
+    saveBMP("C:\\Users\\Usuario\\Desktop\\output.bmp", width, height, framebuffer);
+    saveBMP("C:\\Users\\Usuario\\Desktop\\reflection_map.bmp", width, height, reflectionBuffer);
+    saveBMP("C:\\Users\\Usuario\\Desktop\\transmission_map.bmp", width, height, transmissionBuffer);
+    saveBMP("./output.bmp", width, height, framebuffer);
 
     std::cout << "Render terminado: output.bmp" << std::endl;
 

@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "Pyramid.h"
 #include "Box.h"
+#include "cilindro.h"
 #include <algorithm>
 #include "tinyxml2.h"
 
@@ -128,7 +129,29 @@ int main() {
 
             sphereElem = sphereElem->NextSiblingElement("sphere");
         }
-        XMLElement* pyrElem = objectsElem->FirstChildElement("pyramid");
+
+        XMLElement* cylinderElem = objectsElem->FirstChildElement("cylinder");
+        while (cylinderElem) {
+            float x = cylinderElem->FloatAttribute("cx");
+            float y = cylinderElem->FloatAttribute("cy");
+            float z = cylinderElem->FloatAttribute("cz");
+            float height = cylinderElem->FloatAttribute("height");
+            if (height == 0.0f) height = 1.2f; // por defecto, más alargado
+            float radius = cylinderElem->FloatAttribute("radius");
+            float r = cylinderElem->FloatAttribute("r");
+            float g = cylinderElem->FloatAttribute("g");
+            float b = cylinderElem->FloatAttribute("b");
+            float refl = cylinderElem->FloatAttribute("reflection");
+            float transp = cylinderElem->FloatAttribute("transparency");
+            float refr = cylinderElem->FloatAttribute("refraction");
+
+            Vec3 base(x, y - height * 0.5f, z);
+            Vec3 top(x, y + height * 0.5f, z);
+            scene.objects.push_back(new Cylinder(base, top, radius, Color(r, g, b), refl, transp, refr));
+
+            cylinderElem = cylinderElem->NextSiblingElement("cylinder");
+        }
+       /*  XMLElement* pyrElem = objectsElem->FirstChildElement("pyramid");
         while (pyrElem) {
             float x = pyrElem->FloatAttribute("cx");
             float y = pyrElem->FloatAttribute("cy");
@@ -139,7 +162,7 @@ int main() {
             float b = pyrElem->FloatAttribute("b");
             scene.objects.push_back(new Pyramid(Vec3(x, y, z), size, Color(r, g, b)));
             pyrElem = pyrElem->NextSiblingElement("pyramid");
-        }
+        }*/
 
   
     XMLElement* lightsElem = root->FirstChildElement("lights")->FirstChildElement("light");
@@ -169,6 +192,7 @@ while(boxElem){
 
 
 
+
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
 
@@ -185,10 +209,12 @@ while(boxElem){
     }
 
     //guardo las imagenes
-    saveBMP("C:\\Users\\Usuario\\Desktop\\output.bmp", width, height, framebuffer);
-    saveBMP("C:\\Users\\Usuario\\Desktop\\reflection_map.bmp", width, height, reflectionBuffer);
-    saveBMP("C:\\Users\\Usuario\\Desktop\\transmission_map.bmp", width, height, transmissionBuffer);
-    saveBMP("./output.bmp", width, height, framebuffer);
+  //  saveBMP("\\Users\\Usuario\\Desktop\\output.bmp", width, height, framebuffer);
+   // saveBMP("C:\\Users\\Usuario\\Desktop\\reflection_map.bmp", width, height, reflectionBuffer);
+   // saveBMP("C:\\Users\\Usuario\\Desktop\\transmission_map.bmp", width, height, transmissionBuffer);
+    saveBMP("reflection_map.bmp", width, height, reflectionBuffer);
+    saveBMP("transmission_map.bmp", width, height, transmissionBuffer);
+    saveBMP("output.bmp", width, height, framebuffer);
 
     std::cout << "Render terminado: output.bmp" << std::endl;
 

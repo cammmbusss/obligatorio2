@@ -172,7 +172,8 @@ while(boxElem){
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
 
-            float nx = (2 * (x + 0.5f) / (float)width - 1);
+            float aspect = (float)width / (float)height;
+            float nx = (2 * (x + 0.5f) / (float)width - 1) * aspect;
             float ny = (1 - 2 * (y + 0.5f) / (float)height);
 
             Ray ray = camera.generateRay(nx, ny);

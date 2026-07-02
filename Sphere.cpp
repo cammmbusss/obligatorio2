@@ -42,13 +42,6 @@ bool Sphere::intersect(const Ray& ray, Intersection& hit) const {
     // normal
     Vec3 normal = (hit.point - center).normalize();
 
-    // detecto si el rayo está entrando o saliendo
-    bool outside = ray.direction.dot(normal) < 0;
-
-    if (!outside) {
-        normal = normal * -1.0f; // invertimos la normal si estamos dentro
-    }
-
     hit.normal = normal;
     hit.color = color;
     hit.reflectivity = reflectivity;

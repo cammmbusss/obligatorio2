@@ -151,7 +151,7 @@ Color Scene::trace(const Ray& ray, int depth) {
         if (!blocked) {
 
             float diff = std::max(0.0f, closestHit.normal.dot(lightDir));
-            float attenuation = light.intensity / (1.0f + dist2);
+            float attenuation = light.intensity / (4.0f + dist2);
 
             Color diffuse =
                 closestHit.color *

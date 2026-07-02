@@ -27,7 +27,7 @@
 		maxx="1.8" maxy="-0.75" maxz="-4.4"
 		r="0.95" g="0.95" b="0.92" />
 
-		<sphere cx="-0.35" cy="-0.20" cz="-6.10" radius="0.72"
+		<sphere cx="-0.55" cy="-0.05" cz="-6.10" radius="0.72"
                 r="0.95" g="0.65" b="0.70"
                 reflection="0"
                 transparency="0.88"
@@ -43,7 +43,7 @@
 				transparency="0.0"
 				refraction="1.0" />
 
-		<cylinder cx="-0.7" cy="-0.475" cz="-5.6" height="1.0" radius="0.35"
+		<cylinder cx="0.1" cy="-0.475" cz="-5.8" height="1.0" radius="0.35"
 			   r="0.2" g="0.4" b="1.0"
 			   reflection="0.2" transparency="0.0" refraction="1.0" />
 	</objects>
